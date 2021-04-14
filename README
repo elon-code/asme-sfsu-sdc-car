@@ -2,6 +2,10 @@ Please be aware that this project must run on Platform.io (https://platformio.or
 
 This project was programmed on an Arduino Pro Mini 3.3v 8 Mhz, please be sure to change board on platform.io to this to insure compatibility. Was coded using Arduino platform in platform.io
 
+The competition was the 2021 ASME E-Fest Student Design Competition. See rules folder for rules.
+* Here is the website (may change): https://efests.asme.org/competitions/student-design-competition-(sdc) 
+* 
+
 Parts List:
 * Arduino Pro Mini 3.3v 8 Mhz: https://www.sparkfun.com/products/11114 
 * Pololu 3.3v Step-Up Regulator U1V11F3: https://www.pololu.com/product/2561 
@@ -15,3 +19,7 @@ The motors were powered from capacitors and from a step-down power regulator. Th
 * 2 2.7v 500F Supercapacitors: https://www.amazon.com/gp/product/B07WRC3LWL/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1 
 * Boost converters (from capacitors to motors, see schematic): https://www.amazon.com/gp/product/B01N9ZVXTR/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1 
 * Sunpower solar cells: https://www.amazon.com/Sunpower-Flexible-Monocrystalline-Panels-Busbars/dp/B081Y6KKSK/ref=sr_1_3?dchild=1&keywords=sunpower+cells&qid=1618360599&sr=8-3 
+
+Required Materials for Project:
+* 800 mAh NIMh Rechargable AAA Batteries: https://www.amazon.com/AmazonBasics-Rechargeable-Batteries-12-Pack-Pre-charged/dp/B007B9NXAC/ref=sr_1_5?dchild=1&keywords=aaa+rechargeable+batteries&qid=1618361790&rdc=1&sr=8-5 
+* 
