@@ -1,0 +1,12 @@
+Please be aware that this project must run on Platform.io (https://platformio.org/)
+
+This project was programmed on an Arduino Pro Mini 3.3v 8 Mhz, please be sure to change board on platform.io to this to insure compatibility. Was coded using Arduino platform in platform.io
+
+Parts List:
+* Arduino Pro Mini 3.3v 8 Mhz: https://www.sparkfun.com/products/11114 
+* Pololu 3.3v Step-Up Regulator U1V11F3: https://www.pololu.com/product/2561 
+* DSD Tech HM-18 BLE Module: https://www.amazon.com/DSD-TECH-CC2640R2F-Bluetooth-Compatible/dp/B07N1FWQYP 
+* DRV8835 Dual Motor Driver Carrier: https://www.pololu.com/product/2135 
+* SG92R Digital Micro Servo (Any servo shall do, although be aware of power requirements): https://www.adafruit.com/product/169?gclid=Cj0KCQiA9P__BRC0ARIsAEZ6irgMzGGiDPC1hyQLxitb3JXzGy3swUnkllWOPSWbM4vQxumH_z12ZgMaAnC_EALw_wcB 
+
+The motors were powered from capacitors and from a step-down power regulator. This power setup can be changed based on configuration, and is not critical for the software.
