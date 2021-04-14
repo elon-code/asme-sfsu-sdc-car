@@ -1,22 +1,16 @@
-#include <Servo.h>            //include the library about servo
-#include <SoftwareSerial.h> // SoftwareSerial for serial communication with HM10 bluetooth module.
-#include <ArduinoBlue.h> // ArduinoBlue bluetooth library
+#include <Servo.h>            //include the library about servo https://github.com/arduino-libraries/Servo v1.1.7
+#include <SoftwareSerial.h> // SoftwareSerial for serial communication with HM10 bluetooth module. https://www.arduino.cc/en/Reference/softwareSerial
+#include <ArduinoBlue.h> // ArduinoBlue bluetooth library https://github.com/purwar2016/ArduinoBlue-library v3.1.01
 
-const unsigned long BAUD_RATE = 9600;
+const unsigned long BAUD_RATE = 9600;  //ble can only run at 9600 baud unless flashed AT command
 
 Servo servo_steer;            //give a name to the servo
 
+//motor driver pins
 #define APH A2
 #define AENBL 11
 #define BPH A0
 #define BENBL 6
-
-//transistor pins
-//#define bcharge 3
-//#define bdrive 3
-int button;
-bool bchargeOn;
-bool bdriveOn;
 
 // HM10 BLUETOOTH MODULE PINS
 // NOTE: Not all pins on your Arduino may support SoftwareSerial.
@@ -26,32 +20,12 @@ const int BLUETOOTH_RX = 7;
 SoftwareSerial softSerial(BLUETOOTH_TX, BLUETOOTH_RX); // Object for serial communication to HM 10 bluetooth module using digital pins.
 ArduinoBlue phone(softSerial); // Object for smartphone robot control.
 
-#define LED 13
-
-//void start()
-//{
-//  button = phone.getButton();
-//
-//  if (button == 0) {    
-//    if (bchargeOn) {
-//      digitalWrite(bcharge, LOW);
-//      digitalWrite(LED, LOW);
-//      Serial.println("battery charging off");
-//      bchargeOn = false;
-//    } else {
-//      digitalWrite(bcharge, HIGH);
-//      digitalWrite(LED, HIGH);
-//      Serial.println("battery charging on");
-//      bchargeOn = true;
-//    }
-//  }
-//}
-
+#define LED 13 //not necessary
 
 void steer()
 {
   int steering = phone.getSteering();
-  int mappedServo = map(abs(steering), 0, 99, 20, 160); //takes values from left/right joystick and maps to servo values
+  int mappedServo = map(abs(steering), 0, 99, 30, 150); //takes values from left/right joystick and maps to servo values
   if (steering != 49) {
      servo_steer.attach(3);
   }
@@ -59,6 +33,7 @@ void steer()
     servo_steer.detach();
   }
   servo_steer.write(mappedServo); //steers using mapped values
+  Serial.println(steering);
   delay(5);  //wait for servo to get to position
   //Serial.print("steering value:  "); Serial.println(steering);
   //Serial.print("mapped steering:    "); Serial.println(mappedServo);
@@ -92,7 +67,7 @@ void drive()
 }
 
 
-void voltageMonitor()
+void voltageMonitor() //still being implemented
 {
   
   if (Serial.available()) {
@@ -117,13 +92,11 @@ void setup()
   pinMode(AENBL, OUTPUT);
   pinMode(BPH, OUTPUT);
   pinMode(BENBL, OUTPUT);
-  pinMode(bchargeOn, OUTPUT);
 }
 
 void loop()
 {
-  //start();
   steer();
   drive();
-  //phoneMonitor();
+  //voltageMonitor(); Still being implemented
 }
