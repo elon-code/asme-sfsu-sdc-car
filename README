@@ -1,0 +1,4 @@
+Please be aware that this project must run on Platform.io (https://platformio.org/)
+
+This project was programmed on an Arduino Pro Mini 3.3v 8 Mhz, please be sure to change board on platform.io to this to insure compatibility. Was coded using Arduino platform in platform.io
+
