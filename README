@@ -2,6 +2,10 @@ Please be aware that this project must run on Platform.io (https://platformio.or
 
 This project was programmed on an Arduino Pro Mini 3.3v 8 Mhz, please be sure to change board on platform.io to this to insure compatibility. Was coded using Arduino platform in platform.io
 
+The remote control software is available for free from Arduino Blue. The app is available for both IOS and Android and interfaces with the arduino through BLE protocol. https://sites.google.com/stonybrook.edu/arduinoble/
+
+The only other dependencies are the arduino servo and software serial libraries. These are all included in the platform config file.
+
 The competition was the 2021 ASME E-Fest Student Design Competition. See rules folder for rules.
 * Here is the website (may change): https://efests.asme.org/competitions/student-design-competition-(sdc) 
 * 
@@ -22,4 +26,4 @@ The motors were powered from capacitors and from a step-down power regulator. Th
 
 Required Materials for Project:
 * 800 mAh NIMh Rechargable AAA Batteries: https://www.amazon.com/AmazonBasics-Rechargeable-Batteries-12-Pack-Pre-charged/dp/B007B9NXAC/ref=sr_1_5?dchild=1&keywords=aaa+rechargeable+batteries&qid=1618361790&rdc=1&sr=8-5 
-* 
+* Work Light for Solar Charging: https://www.amazon.com/Utilitech-500-Watt-Halogen-Stand-Light/dp/B07QNV5RT7 
